@@ -29,8 +29,8 @@ services:
   # Cognee MCP Server - Model Context Protocol server for IDE integration
   cognee-mcp:
     container_name: cognee-mcp
-    profiles:
-      - mcp
+    #profiles:
+    #  - mcp
     networks:
       - cognee-network
     build:
@@ -68,8 +68,8 @@ services:
   # If you want to use Cognee with a UI environment you can integrate the Cognee MCP Server into Cursor / Claude Desktop / Visual Studio Code (through Cline/Roo)
   frontend:
     container_name: frontend
-    profiles:
-        - ui
+    #profiles:
+    #    - ui
     build:
       context: ./cognee-frontend
       dockerfile: Dockerfile
@@ -85,8 +85,8 @@ services:
   neo4j:
     image: neo4j:latest
     container_name: neo4j
-    profiles:
-      - neo4j
+    #profiles:
+    #  - neo4j
     ports:
       - 7474:7474
       - 7687:7687
@@ -99,8 +99,8 @@ services:
   falkordb:
     image: falkordb/falkordb:edge
     container_name: falkordb
-    profiles:
-      - falkordb
+    #profiles:
+    #  - falkordb
     ports:
       - 6379:6379
       - 3001:3000
@@ -110,8 +110,8 @@ services:
   chromadb:
     image: chromadb/chroma:0.6.3
     container_name: chromadb
-    profiles:
-      - chromadb
+    #profiles:
+    #  - chromadb
     environment:
       - IS_PERSISTENT=TRUE
       - CHROMA_SERVER_AUTH_CREDENTIALS=${VECTOR_DB_KEY}
@@ -128,8 +128,8 @@ services:
   postgres:
     image: pgvector/pgvector:pg17
     container_name: postgres
-    profiles:
-      - postgres
+    #profiles:
+    #  - postgres
     environment:
       POSTGRES_USER: cognee
       POSTGRES_PASSWORD: cognee
