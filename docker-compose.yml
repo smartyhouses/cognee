@@ -17,8 +17,8 @@ services:
     extra_hosts:
       # Allows the container to reach your local machine using "host.docker.internal" instead of "localhost"
       - "host.docker.internal:host-gateway"
-    ports:
-      - 8000:8000
+    #ports:
+     # - 8000:8000
     #  - 5678:5678 # Debugger port
     deploy:
       resources:
